@@ -23,14 +23,12 @@ class EmpIDComparator implements Comparator<Employee> {
 class DesignationComparator implements Comparator<Employee> {
 
 	public int compare(Employee o1, Employee o2) {
-		//return o1.getDesignation().compareTo(o2.getDesignation());
-		if(o1.getDesignation().equals("Manager") || o2.getDesignation().equals("Manager"))
+		if(o1.getDesignation()>o2.getDesignation())
 			return 1;
-		else if(o1.getDesignation().equals("Developer") && o2.getDesignation().equals("Manager"))
-			return -1;
-		else if(o1.getDesignation().equals("Manager") && o2.getDesignation().equals("Developer"))
+		else if(o1.getDesignation()<o2.getDesignation())
 			return -1;
 		return 0;
+		
 	}
 
 }
@@ -48,6 +46,10 @@ class SalaryComparator implements Comparator<Employee> {
 }
 
 public class Detail {
+	private final static String MANAGER="Manager";
+	private final static String LEAD="Lead";
+	private final static String DEVELOPER="Developer";
+	private final static String TESTER="Tester";
 	private ArrayList<Employee> employees;
 
 	Detail() {
@@ -69,11 +71,21 @@ public class Detail {
 			}
 		}
 	}
-
+	public static String getDesginationString(int type) {
+		if(type==1)
+			return MANAGER;
+		else if(type==2)
+			return LEAD;
+		else if(type==3)
+			return DEVELOPER;
+		else if(type==4)
+			return TESTER;
+		return "";
+	}
 	public void displayEmployees() {
 		System.out.println("\n EMPID\t NAME\t DESIGNATION\t SALARY");
 		for (Employee employee : employees) {
-			System.out.println(employee.getEmpid() + "\t" + employee.getName() + "\t" + employee.getDesignation() + "\t"
+			System.out.println(employee.getEmpid() + "\t" + employee.getName() + "\t" + getDesginationString(employee.getDesignation()) + "\t"
 					+ employee.getSalary());
 		}
 	}

@@ -3,14 +3,25 @@ package com.collection.sortbypriority;
 class Employee {
 	private String empid;
 	private String name;
-	private String designation;
+	private int designation;
 	private double salary;
+	private final int MANAGER=1;
+	private final int LEAD=2;
+	private final int DEVELOPER=3;
+	private final int TESTER=4;
 	
 	Employee(String empid,String name,String designation,double salary){
 		this.empid=empid;
 		this.name=name;
-		this.designation=designation;
 		this.salary=salary;
+		if(designation.equals("Manager"))
+			this.designation=MANAGER;
+		else if(designation.equals("Lead"))
+			this.designation=LEAD;
+		else if(designation.equals("Developer"))
+			this.designation=DEVELOPER;
+		else if(designation.equals("Tester"))
+			this.designation=TESTER;
 	}
 
 	public String getEmpid() {
@@ -28,13 +39,10 @@ class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 
-	public String getDesignation() {
+	public int getDesignation() {
 		return designation;
-	}
-
-	public void setDesignation(String designation) {
-		this.designation = designation;
 	}
 
 	public double getSalary() {
