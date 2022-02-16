@@ -13,3 +13,19 @@ https://github.com/Vishwamagdavan/Playing-With-Java_Collections/tree/main/src/co
 Sort the employee list by name, empid, role and salary. use Collections.Sort() and comparator
 
 https://github.com/Vishwamagdavan/Playing-With-Java_Collections/tree/main/src/com/collection/sortemployee
+
+### Project 03
+#### Employee List based on Priority of the Employee 
+
+Sort the employee list by name, empid, role and salary. use Collections.Sort() and comparator
+
+https://github.com/Vishwamagdavan/Playing-With-Java_Collections/tree/main/src/com/collection/sortbypriority
+
+### Project 04
+#### Browser Simulator using 2 Stack 
+
+Imagine you are going to designing the browser, your task is to implement the forward and backward in browser router 
+
+https://github.com/Vishwamagdavan/Playing-With-Java_Collections/tree/main/src/com/collection/BrowserNavigator
+
+
